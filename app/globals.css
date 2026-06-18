@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --background: #060b18;
+  --foreground: #e2e8f0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
+
+.chat-bubble {
+  animation: slideUp 0.25s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.typing-dot { animation: pulse-dot 1.2s ease-in-out infinite; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+.weather-gradient-clear    { background: linear-gradient(135deg, #0f2460 0%, #1a4080 60%, #0ea5e9 100%); }
+.weather-gradient-cloudy   { background: linear-gradient(135deg, #1e293b 0%, #334155 60%, #475569 100%); }
+.weather-gradient-rain     { background: linear-gradient(135deg, #0c1445 0%, #1e3a8a 60%, #1d4ed8 100%); }
+.weather-gradient-snow     { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 60%, #93c5fd 100%); }
+.weather-gradient-thunder  { background: linear-gradient(135deg, #0f0f1a 0%, #2d1b69 60%, #7c3aed 100%); }
+.weather-gradient-fog      { background: linear-gradient(135deg, #1e2533 0%, #374151 60%, #6b7280 100%); }
